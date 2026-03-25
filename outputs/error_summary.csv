@@ -1,0 +1,2 @@
+mean_residual,residual_std,median_absolute_error,p90_absolute_error,p95_absolute_error,max_absolute_error
+-9.991093765847837e-05,257.7464419368779,61.33505426499869,282.77639977466123,484.57270217226,1878.2170940302185
