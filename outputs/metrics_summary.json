@@ -1,0 +1,109 @@
+{
+  "config": {
+    "train_meta_path": "c:\\Users\\31606\\Desktop\\2025ABB\\train.csv",
+    "test_meta_path": "c:\\Users\\31606\\Desktop\\2025ABB\\test.csv",
+    "train_signal_dir": "c:\\Users\\31606\\Desktop\\2025ABB\\train",
+    "test_signal_dir": "c:\\Users\\31606\\Desktop\\2025ABB\\test",
+    "output_dir": "c:\\Users\\31606\\Desktop\\2025ABB\\outputs",
+    "random_seed": 42,
+    "n_splits": 5,
+    "use_stratified_cv": true,
+    "n_target_bins": 10,
+    "signal_length": 8192,
+    "n_harmonics": 5,
+    "harmonic_band_hz": 2.0,
+    "target_mode": "absolute",
+    "use_random_forest": true,
+    "use_mlp": true,
+    "use_catboost": true,
+    "use_xgboost": true,
+    "use_cnn": true,
+    "stack_candidate_models": [
+      "catboost",
+      "xgboost",
+      "rf"
+    ],
+    "stack_alpha": 1.0,
+    "rf_estimators": 400,
+    "rf_max_depth": null,
+    "mlp_hidden": [
+      256,
+      128
+    ],
+    "mlp_max_iter": 400,
+    "catboost_iterations": 500,
+    "catboost_depth": 6,
+    "catboost_lr": 0.05,
+    "xgb_estimators": 500,
+    "xgb_depth": 6,
+    "xgb_lr": 0.05,
+    "xgb_subsample": 0.9,
+    "xgb_colsample": 0.9,
+    "cnn_epochs": 16,
+    "cnn_batch_size": 32,
+    "cnn_lr": 0.001,
+    "cnn_weight_decay": 0.0001,
+    "cnn_patience": 4,
+    "cnn_num_workers": 0,
+    "cnn_device": "cpu",
+    "save_oof_csv": true,
+    "save_test_csv": true,
+    "save_metrics_json": true,
+    "save_paper_assets": true,
+    "paper_dir": "c:\\Users\\31606\\Desktop\\2025ABB\\outputs\\paper_assets",
+    "save_pdf_figures": true,
+    "save_png_figures": true,
+    "export_latex_tables": true
+  },
+  "main_metrics": {
+    "rf": {
+      "r2": 0.9096862077713013,
+      "mae": 122.4625015258789,
+      "rmse": 322.36191326675055
+    },
+    "mlp": {
+      "r2": 0.7931507229804993,
+      "mae": 315.2676086425781,
+      "rmse": 487.8582978181267
+    },
+    "catboost": {
+      "r2": 0.937813937664032,
+      "mae": 122.19113159179688,
+      "rmse": 267.4934432607648
+    },
+    "xgboost": {
+      "r2": 0.918289065361023,
+      "mae": 111.43041229248047,
+      "rmse": 306.62452863803964
+    },
+    "cnn": {
+      "r2": -3.659303665161133,
+      "mae": 2052.9208984375,
+      "rmse": 2315.4063358296316
+    }
+  },
+  "stack_metrics": {
+    "r2": 0.9422632973677049,
+    "mae": 126.32262954614772,
+    "rmse": 257.7464419368972
+  },
+  "stack_base_models": [
+    "catboost",
+    "xgboost",
+    "rf"
+  ],
+  "stack_weights": {
+    "catboost": 0.8673289086811754,
+    "xgboost": 0.19153401099131612,
+    "rf": 6.386826582438085e-26
+  },
+  "stack_intercept": -134.22897672211138,
+  "error_summary": {
+    "mean_residual": -9.991093765847837e-05,
+    "residual_std": 257.7464419368779,
+    "median_absolute_error": 61.33505426499869,
+    "p90_absolute_error": 282.77639977466123,
+    "p95_absolute_error": 484.57270217226,
+    "max_absolute_error": 1878.2170940302185
+  }
+}
